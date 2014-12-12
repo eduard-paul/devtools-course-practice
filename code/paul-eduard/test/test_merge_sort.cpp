@@ -1,14 +1,16 @@
 // Copyright 2014 Paul Eduard
 
 #include <gtest/gtest.h>
+#include <stdint.h>
 #include <vector>
 #include <climits>
+
 
 #include "include/merge-sort.h"
 
 TEST(MergeSortTest, Null_Pointer) {
     // Arrange
-    std::vector<int> a;
+    std::vector<int64_t> a;
     // Act
     int ret = Merge_Sort(&a, 0, 5);
     // Assert
@@ -17,9 +19,9 @@ TEST(MergeSortTest, Null_Pointer) {
 
 TEST(MergeSortTest, Zero_Elements_For_Sort) {
     // Arrange
-    std::vector<int> a(5);
+    std::vector<int64_t> a(5);
     for (unsigned int i = 0; i < 5; i++) {
-        a[i] = static_cast<int>(i);
+        a[i] = static_cast<int64_t>(i);
     }
     // Act
     Merge_Sort(&a, 0, 0);
@@ -32,9 +34,9 @@ TEST(MergeSortTest, Zero_Elements_For_Sort) {
 }
 TEST(MergeSortTest, Swapped_Left_Right_Borders) {
     // Arrange
-    std::vector<int> a(5);
+    std::vector<int64_t> a(5);
     for (unsigned int i = 0; i < 5; i++) {
-        a[i] = static_cast<int>(i);
+        a[i] = static_cast<int64_t>(i);
     }
     // Act
     Merge_Sort(&a, 3, 1);
@@ -47,9 +49,9 @@ TEST(MergeSortTest, Swapped_Left_Right_Borders) {
 }
 TEST(MergeSortTest, Partial_Sort) {
     // Arrange
-    std::vector<int> a(5);
+    std::vector<int64_t> a(5);
     for (unsigned int i = 0; i < 5; i++) {
-        a[i] = static_cast<int>(5 - i);
+        a[i] = static_cast<int64_t>(5 - i);
     }
     // Act
     Merge_Sort(&a, 1, 3);
@@ -63,9 +65,9 @@ TEST(MergeSortTest, Partial_Sort) {
 TEST(MergeSortTest, Full_Sort) {
     // Arrange
     const int N = 1000;
-    std::vector<int> a(N);
+    std::vector<int64_t> a(N);
     for (unsigned int i = 0; i < N; i++) {
-        a[i] = static_cast<int>(N - i);
+        a[i] = static_cast<int64_t>(N - i);
     }
     // Act
     Merge_Sort(&a, 0, N-1);
@@ -74,7 +76,7 @@ TEST(MergeSortTest, Full_Sort) {
 }
 TEST(MergeSortTest, GreetingsFromSergei) {
     // Arrange
-    std::vector<int> a(5);
+    std::vector<int64_t> a(5);
 
     a[0] = INT_MAX;
     a[1] = INT_MAX;

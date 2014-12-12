@@ -3,6 +3,7 @@
 #ifndef CODE_PAUL_EDUARD_INCLUDE_MERGE_SORT_APPLICATION_H_
 #define CODE_PAUL_EDUARD_INCLUDE_MERGE_SORT_APPLICATION_H_
 
+#include <stdint.h>
 #include <string>
 #include <vector>
 
@@ -16,7 +17,7 @@ class SortApplication {
  private:
     std::string message_;
     unsigned int N;
-    std::vector<int> arr;
+    std::vector<int64_t> arr;
     void help(const char* appname);
     bool parseArguments(int argc, const char** argv);
 };

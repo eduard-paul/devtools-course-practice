@@ -58,7 +58,7 @@ bool SortApplication::parseArguments(int argc, const char** argv) {
 
     try {
         for (unsigned int i = 0; i < N; i++) {
-            arr.push_back(static_cast<int>(parseInteger(argv[2 + i])));
+            arr.push_back(parseInteger(argv[2 + i]));
         }
     }
     catch(...) {
