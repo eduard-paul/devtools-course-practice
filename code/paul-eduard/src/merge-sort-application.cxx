@@ -10,7 +10,7 @@
 #include <string>
 #include <sstream>
 
-SortApplication::SortApplication() : message_(""), N(0), arr(0) {}
+SortApplication::SortApplication() : arr(0), message_(""), N(0) {}
 
 void SortApplication::help(const char* appname) {
     message_ += std::string("This is a sort application.\n\n")
