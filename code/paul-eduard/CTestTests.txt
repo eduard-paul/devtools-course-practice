@@ -1,0 +1,52 @@
+#############################################
+##### Testing
+#############################################
+
+enable_testing()
+
+add_test(
+    NAME can_Run
+    COMMAND ${appname}
+)
+
+add_test(
+    NAME can_Print_Help_Without_Arguments
+    COMMAND ${appname}
+)
+set_tests_properties (can_Print_Help_Without_Arguments
+  PROPERTIES PASS_REGULAR_EXPRESSION "This is a sort application.")
+
+add_test(
+    NAME can_Check_Number_Of_Arguments
+    COMMAND ${appname} 1
+)
+set_tests_properties (can_Check_Number_Of_Arguments
+  PROPERTIES PASS_REGULAR_EXPRESSION "ERROR: Should be 2 or more arguments.")
+
+add_test(
+    NAME can_Detect_Wrong_Number_Format
+    COMMAND ${appname} 1.0 2
+)
+set_tests_properties (can_Detect_Wrong_Number_Format
+  PROPERTIES PASS_REGULAR_EXPRESSION "Wrong number of elements format!")
+
+add_test(
+    NAME can_Detect_Wrong_Number_Format2
+    COMMAND ${appname} 2 2 three
+)
+set_tests_properties (can_Detect_Wrong_Number_Format2
+  PROPERTIES PASS_REGULAR_EXPRESSION "Wrong numbers format!")
+
+add_test(
+    NAME can_Detect_Wrong_Number_Of_Elements
+    COMMAND ${appname} 3 1 2
+)
+set_tests_properties (can_Detect_Wrong_Number_Of_Elements
+  PROPERTIES PASS_REGULAR_EXPRESSION "Wrong number of elements!")
+
+add_test(
+    NAME can_Sort
+    COMMAND ${appname} 3 1 2 0
+)
+set_tests_properties (can_Sort
+  PROPERTIES PASS_REGULAR_EXPRESSION "Result: 0 1 2 ")

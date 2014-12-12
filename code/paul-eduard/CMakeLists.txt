@@ -4,6 +4,7 @@
 
 set(libname  "paul-eduard-merge-sort-library")
 set(testname "paul-eduard-merge-sort-test")
+set(appname  "paul-eduard-merge-sort-application")
 
 message("")
 message("############################################")
@@ -25,3 +26,13 @@ add_lib_static(${libname} "include" "src")
 add_local_dependency(${libname})
 add_app(${testname} "test")
 target_link_libraries(${testname})
+
+# Declare application
+add_local_dependency(${libname})
+add_app(${appname} "application")
+
+#############################################
+##### Testing
+#############################################
+
+include("CTestTests.txt")
