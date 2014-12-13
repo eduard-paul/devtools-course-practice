@@ -74,7 +74,7 @@ TEST_F(AppTest, Can_Detect_Wrong_Number_Format2) {
 }
 
 TEST_F(AppTest, Can_Detect_Wrong_Number_Format3) {
-    args = {"2", "1", "three"};
+    args = {"2", "1", "..."};
 
     Act(args);
 
