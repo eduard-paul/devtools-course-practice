@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <string>
 #include <vector>
-
+#pragma pack(push, 1)
 class SortApplication {
  public:
     SortApplication();
@@ -21,6 +21,6 @@ class SortApplication {
     void help(const char* appname, const char* message);
     bool parseArguments(int argc, const char** argv);
 };
-
+#pragma pack(pop)
 
 #endif  // CODE_PAUL_EDUARD_INCLUDE_MERGE_SORT_APPLICATION_H_

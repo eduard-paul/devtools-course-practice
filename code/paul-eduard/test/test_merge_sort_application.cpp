@@ -73,6 +73,14 @@ TEST_F(AppTest, Can_Detect_Wrong_Number_Format2) {
     Assert("Wrong numbers format!.*");
 }
 
+TEST_F(AppTest, Can_Detect_Wrong_Number_Format3) {
+    args = {"2", "1", "..."};
+
+    Act(args);
+
+    Assert("Wrong numbers format.*");
+}
+
 TEST_F(AppTest, Can_Detect_Wrong_Number_Of_Elements) {
     args = {"3", "1", "2"};
 
