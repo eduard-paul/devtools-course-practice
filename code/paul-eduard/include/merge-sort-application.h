@@ -18,7 +18,7 @@ class SortApplication {
     std::vector<int64_t> arr;
     std::string message_;
     unsigned int N;
-    void help(const char* appname);
+    void help(const char* appname, const char* message);
     bool parseArguments(int argc, const char** argv);
 };
 

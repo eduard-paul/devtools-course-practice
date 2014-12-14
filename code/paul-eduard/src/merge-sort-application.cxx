@@ -12,8 +12,9 @@
 
 SortApplication::SortApplication() : arr(0), message_(""), N(0) {}
 
-void SortApplication::help(const char* appname) {
-    message_ += std::string("This is a sort application.\n\n")
+void SortApplication::help(const char* appname, const char* message = "") {
+    message_ = std::string(message)
+             + std::string("This is a sort application.\n\n")
              + "Please provide arguments in the following format:\n\n"
              + "  $ " + appname + " <argument1> <argument2> <argument3> "
              + "and so on.\n\nWhere first argument is integer number that "
@@ -38,8 +39,7 @@ bool SortApplication::parseArguments(int argc, const char** argv) {
         help(argv[0]);
         return false;
     } else if (argc == 2) {
-        message_ = "ERROR: Should be 2 or more arguments.\n\n";
-        help(argv[0]);
+        help(argv[0], "ERROR: Should be 2 or more arguments.\n\n");
         return false;
     }
 
