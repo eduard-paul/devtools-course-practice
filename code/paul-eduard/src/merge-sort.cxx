@@ -32,12 +32,20 @@ static void Merge(std::vector<int64_t> *mas, unsigned int left,
     while (j < n2) (*mas)[k++] = R[j++];
 }
 
-int Merge_Sort(std::vector<int64_t> *mas, unsigned int l, unsigned int r) {
-    if ((*mas).size() == 0) return -1;
+int _Merge_Sort(std::vector<int64_t> *mas,
+    unsigned int l, unsigned int r) {
     if (l >= r) return 0;
     unsigned int middle = (l+r)/2;
-    Merge_Sort((mas), l, middle);
-    Merge_Sort((mas), middle+1, r);
+    _Merge_Sort((mas), l, middle);
+    _Merge_Sort((mas), middle+1, r);
     Merge((mas), l, middle, r);
     return 0;
+}
+
+std::vector<int64_t> Merge_Sort(const std::vector<int64_t> &mas,
+    unsigned int l, unsigned int r) {
+    std::vector<int64_t> arr(mas);
+    if (l >= r) return arr;
+    _Merge_Sort(&arr, l, r);
+    return arr;
 }

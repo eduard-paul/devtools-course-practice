@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <vector>
 
-int Merge_Sort(std::vector<int64_t> *mas, unsigned int l, unsigned int r);
+std::vector<int64_t> Merge_Sort(const std::vector<int64_t> &mas,
+    unsigned int l, unsigned int r);
 
 #endif  // CODE_PAUL_EDUARD_INCLUDE_MERGE_SORT_H_

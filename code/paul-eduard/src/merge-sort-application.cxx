@@ -75,7 +75,7 @@ std::string SortApplication::operator()(int argc, const char** argv) {
     std::ostringstream stream;
     stream << "Result: ";
 
-    Merge_Sort(&arr, 0, N-1);
+    arr = Merge_Sort(arr, 0, N-1);
     for (unsigned int i = 0; i < N; i++)
         stream << arr[i] << " ";
 
