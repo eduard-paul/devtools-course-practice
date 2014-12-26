@@ -33,6 +33,9 @@ static void Merge(std::vector<int64_t> *mas, unsigned int left,
 }
 
 int _Merge_Sort(std::vector<int64_t> *mas,
+    unsigned int l, unsigned int r);
+
+int _Merge_Sort(std::vector<int64_t> *mas,
     unsigned int l, unsigned int r) {
     if (l >= r) return 0;
     unsigned int middle = (l+r)/2;
